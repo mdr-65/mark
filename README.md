@@ -1,9 +1,14 @@
-import matplotlib.pyplot as plt
-import numpy as np
-x = [1,2,3,4,5,6,7,8,9]
-list_me = [5.0, 4.7, 4.7, 4.0, 4.5, 4.9, 4.1, 3.4, 4.9] 
-liss_class = [4.7, 4.9, 5.0, 3.9, 4.5, 4.5, 4.2, 4.7, 4.5]
-plt.plot(x, list_me, color= 'yellow', label= 'my grades')
-plt.plot(x, liss_class, color='black', label= 'all grades') 
-plt.legend()
-plt.show()
+def count_b(code_number):
+    spell_c = 0
+    rome_c = 0
+    for code in code_number:
+        if str(code).endswith('42'): spell_c += 1
+        last2num = int(str(code)[-2:]) 
+        if 50 <= last2num <= 80: rome_c += 1
+    return spell_c, rome_c
+
+code_number = [2736649, 72376423, 16738712987, 32492, 90129343, 9828342, 9730373, 2398932465, 273626389, 2837273732, 87425672151, 728374363, 652365456, 32872487387498, 256235634366, 236762476, 67263672342, 83748374, 28384309402365, 2387647589, 2746480, 28364876452373, 823749283479, 29837482937454, 6725347623942, 176842]
+spell_c, rome_c = count_b(code_number)
+
+print(f"Книг с заклинаниями: {spell_c}")
+print(f"Книг с историей Древнего Рима: {rome_c}")
